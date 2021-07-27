@@ -52,8 +52,8 @@ app.get("/user/:id", async (req, res) => {
 
 
 app.post("/alert", async (req, res) => {
-  const { id, BTC, ETH, DOGE } = req.body
-  const results = await usersDocRef.doc(id).update({
+  const { docid, BTC, ETH, DOGE } = req.body
+  const results = await usersDocRef.doc(docid).update({
     currency: {
       BTC,
       ETH,
